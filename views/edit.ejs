@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+    <div class="form">
+        <a style="color: blue;" href="/">Go back</a>
+        <h1 style="color: antiquewhite;  margin: 20px 0px 0px 0px;">Edit </h1>
+
+        <form action="/update/<%=fileName%>" method="POST">
+            
+            <input required style="height: 30px; outline: none;" class="inputs" type="text" placeholder="Title" name="title" value="<%=fileName%>">
+            <textarea style="resize: none; height: 200px; outline: none;" class="inputs" placeholder="Note..." name="note"><%=data%></textarea>
+                
+            <input style="height: 30px; color: rgb(250, 234, 214); background: rgb(92, 78, 62);" class="inputs submit"
+                type="submit" value="Update">
+        </form>
+    </div>
+</body>
+
+</html>

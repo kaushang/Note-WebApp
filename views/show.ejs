@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= fileName %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+    <div class="form">
+        <a style="color: blue; text-decoration: none;" href="/"><u>Go back</u></a>
+        <div style="border-radius: 4px; background-color: rgb(46, 46, 46); padding: 20px; margin-top: 20px; height: fit-content;">
+            <h2 style="color: antiquewhite; background-color: rgb(46, 46, 46);">
+                <%= fileName %>
+            </h2>
+            <% if(data.length == 0) { %>
+                <p class="list-items" style="color: gray; background-color: rgb(46, 46, 46);">Empty note.</p>
+                <%} else { %>
+                    <h3 style="margin-top: 20px; color: antiquewhite; background-color: rgb(46, 46, 46);"><%= data %></h3>
+                    <%}%>
+        </div>
+    </div>
+</body>
+
+</html>

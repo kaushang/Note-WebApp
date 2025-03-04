@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <h1 style="color: antiquewhite;" class="form">Create a note.</h1>
+
+    <div class="form">
+        <form action="/create" method="POST">
+            <input required style="height: 30px; outline: none;" class="inputs" type="text" placeholder="Title" name="title">
+            <textarea style="resize: none; height: 200px; outline: none;" class="inputs" placeholder="Note..." name="note"></textarea>
+            <input style="height: 30px; color: rgb(250, 234, 214); background: rgb(92, 78, 62);" class="inputs submit" type="submit" value="Create">
+        </form>
+    </div>
+
+    <div class="notes">
+        <% if(files.length > 0) { %>
+            <p style="color: gray; margin-bottom: -20px;">Your notes</p>
+            <% files.forEach(function(val) { %>
+                <div style="margin-top: 30px; display: flex; flex-direction: row; justify-content: space-between; width: 100%; height: fit-content; background-color: rgb(46, 46, 46); border-radius: 4px; padding: 10px;">
+                    <div style="width: fit-content; background-color: rgb(46, 46, 46);">
+                        <h3 style="color: antiquewhite; margin-bottom: 10px; background-color: rgb(46, 46, 46);"><%= val %></h3>
+                        <a href="/files/<%=val%>" style="color: blue; text-decoration: none; background-color: rgb(46, 46, 46);">Read note...</a>
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: start; width: fit-content; background-color: rgb(46, 46, 46);">
+                        <a href="/edit/<%=val%>" style="font-size: small; color:rgb(160, 160, 160);  background-color: rgb(46, 46, 46); text-decoration: none; padding: 0px 10px 0px 10px; border-right: 1px solid ;">Edit</a>
+                        <a href="/delete/<%=val%>" style="font-size: small; color:rgb(160, 160, 160);  background-color: rgb(46, 46, 46); text-decoration: none; padding: 0px 10px 0px 10px">Delete</a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p style="color: gray;">No notes yet.</p>
+        <% } %>
+    </div>
+</body>
+</html>
